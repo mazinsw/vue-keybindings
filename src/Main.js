@@ -2,14 +2,14 @@ import Observer from './Observer'
 import Emitter from './Emitter'
 
 export default {
-  install (Vue, options) {
+  install (app, options) {
     if (!options) {
       options = {}
     }
     const observer = new Observer(options)
-    Vue.prototype.$shortcut = observer
+    app.config.globalProperties.$shortcut = observer
 
-    Vue.mixin({
+    app.mixin({
       created () {
         // save current methods
         let shortcuts = this.$options['shortcuts']
