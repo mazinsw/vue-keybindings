@@ -1,6 +1,6 @@
 {
   "name": "vue-keybindings",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Keyboard Shortcuts registration and Keybindings management",
   "main": "dist/build.js",
   "scripts": {
