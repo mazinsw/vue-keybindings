@@ -37,7 +37,7 @@ export default {
           })
         }
       },
-      beforeDestroy () {
+      beforeUnmount () {
         let shortcuts = this.$options['shortcuts']
 
         if (shortcuts) {
