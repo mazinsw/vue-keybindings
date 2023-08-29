@@ -45,6 +45,8 @@ export default {
             delete this.$options.shortcuts[key]
           })
         }
+
+        document.removeEventListener('keydown', observer.keydownEventListener)
       }
     })
   }
