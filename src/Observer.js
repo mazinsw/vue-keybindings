@@ -2,6 +2,7 @@ import Emitter from './Emitter'
 
 export default class {
   constructor (options) {
+    this.keydownEventListener = null
     this.shortcuts = new Map()
     const alias = options.alias || {}
     Object.keys(alias).forEach(label => {
@@ -48,11 +49,12 @@ export default class {
   }
 
   onEvent () {
-    document.addEventListener('keydown', event => {
+    this.keydownEventListener = event => {
       if (Emitter.emit('keydown', event) !== false) {
         this.onKeydown(event)
       }
-    })
+    }
+    document.addEventListener('keydown', this.keydownEventListener)
   }
 
   onKeydown (event) {
